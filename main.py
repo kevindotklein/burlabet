@@ -1,5 +1,6 @@
 from burlabet.scrapper.user.user_feed import get_user_bets
 from burlabet.db.db import init_db, add_user, get_users, get_user
+from burlabet.bot.bot import bot_run
 
 def main() -> None:
   init_db()
@@ -7,16 +8,16 @@ def main() -> None:
   # debug_str = [str(b) for b in boxes]
   # for x in debug_str:
   #   print(x)
-
   users = get_users()
   users_str = [str(u) for u in users]
   for x in users_str:
     print(x)
   print("="*60)
-  user1 = get_user(1)
+  user1 = get_user(2)
   if not user1:
     print("usuário 1 n encontrado")
   print(user1)
+  bot_run()
 
 if __name__ == '__main__':
   main()

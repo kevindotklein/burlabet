@@ -5,4 +5,4 @@ class User:
     self.expires_at = expires_at
 
   def __str__(self):
-    return f"User(id='{self.id}' expires_at='{self.expires_at}')"
+    return f"👤 (\n\tid='{self.id}' \n\texpires_at='{self.expires_at}'\n)"
