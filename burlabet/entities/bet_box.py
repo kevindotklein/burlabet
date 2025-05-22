@@ -8,5 +8,5 @@ class BetBox:
     self.bookers: List[Booker] = bookers
   
   def __str__(self):
-    bookers_str: List[str] = ["=>\t" + str(b) for b in self.bookers]
+    bookers_str: List[str] = ["" + str(b) for b in self.bookers]
     return f"BetBox(profit = '{self.profit}' posted_at='{self.posted_at}' bookers=[\n" + "\n".join(bookers_str) + "\n])"

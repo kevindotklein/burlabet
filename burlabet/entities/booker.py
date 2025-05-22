@@ -10,5 +10,5 @@ class Booker:
     self.odd_link = odd_link
   
   def __str__(self):
-    return f"Booker(name='{self.name}' link='{self.link}' date_time='{self.date_time}' " \
-      f"coeff='{self.coeff}' odd_value='{self.odd_value}' odd_link='{self.odd_link}')"
+    return f"Booker(\n\tname='{self.name}' \n\tlink='{self.link}' \n\tdate_time='{self.date_time}' " \
+      f"\n\tcoeff='{self.coeff}' \n\todd_value='{self.odd_value}' \n\todd_link='{self.odd_link}'\n)"
