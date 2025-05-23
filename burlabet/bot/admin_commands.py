@@ -26,3 +26,24 @@ async def get_user(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     return
 
   await update.message.reply_text(f"{str(user)}")
+
+@require_admin(f"Command: '/add_user <ID> <days>'", "Permission denied: '/add_user <ID> <days>'", "Usuário não autorizado")
+async def add_user(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+  if len(context.args) < 2:
+    await update.message.reply_text("❗ Especifique um ID e os dias de assinatura. Ex: /add_user 0 30")
+    return
+  req_id = context.args[0]
+  try:
+    int(req_id)
+  except ValueError:
+    await update.message.reply_text("❗O ID deve ser um número")
+    return
+  req_days = context.args[1]
+  try:
+    int(req_days)
+  except ValueError:
+    await update.message.reply_text("❗Os dias devem ser um número")
+    return
+
+  db.add_user(int(req_id), int(req_days))
+  await update.message.reply_text("✅ Usuário adicionado com sucesso")

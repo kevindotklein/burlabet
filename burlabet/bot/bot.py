@@ -15,6 +15,8 @@ def bot_run() -> None:
   app.add_handler(CommandHandler("get_users", admin_commands.get_users))
   app.add_handler(CommandHandler("get_user", admin_commands.get_user))
   app.add_handler(CommandHandler("bets", user_commands.get_bets))
+  app.add_handler(CommandHandler("get_telegram_id", guest_commands.get_telegram_id))
+  app.add_handler(CommandHandler("add_user", admin_commands.add_user))
 
   log.bot("Telegram BurlaBet Bot running...")
   app.run_polling()
